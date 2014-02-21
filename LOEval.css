@@ -146,7 +146,11 @@ textarea {
     font-size: 1em;
     color: black;
 }
-
+#feedbackDisplay{
+    font-family: monospace; 
+    font-size: 1em;
+    color: black;
+}
 
 #stmnt{
     font-family: sans-serif;

@@ -1,3 +1,4 @@
+// *** //
 /*
 Learning Objective Evaluator
 v 1.0
@@ -7,7 +8,7 @@ v 1.0
 var fileMessage = document.getElementById('results');
 var fileDisplay = document.getElementById('fileDisplay');
 
-
+// outputs HTML "tabs" (grouping of non-breaking spaces) given argument input
 function tab(n){
     var tab = "";
     for(var i = 0; i <= n; i++){
@@ -16,7 +17,7 @@ function tab(n){
     return tab;
 }
 
-
+// outputs HTML non-breaking spaces given argument input
 function spaces(n){
     var space = "";
     for(var i = 0; i <= n; i++){
@@ -156,18 +157,40 @@ function parse(result) {
 
     var objArr = []; // array of Objective objects
     var now = result;
+    //var newRow = document.getElementById("table1").insertRow();
+    //var newCell = newRow.insertCell();
     
     for(var i =0; i < now.length; i++){
+        var newRow = document.getElementById("table1").insertRow();
+        var newCell = newRow.insertCell();
+        
         //alert(now[i].capitalize() + " // -> ");
         var Objective = Object.create(LO); // Create Objective object
         Objective.LOStmnt = now[i]; // set objective statement (the "learning objective")
          //alert(Objective.LOStmnt);
         hasPunctuation(Objective.LOStmnt, Objective);
         isCaptalized(Objective.LOStmnt, Objective);
-        fileDisplay.innerHTML += Objective.LOStmnt + tab(8) + "|" + spaces(2) + "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt + spaces(2) + "|" + spaces(2) + "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt + spaces(2) + "|" + spaces(2) + "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct + "<br/>"; // Display results
-        //alert(150-Objective.LOStmnt.length);
-        // spaces(150 - Objective.LOStmnt.length)
-        //+ tab(1) + "|" + tab(1) + "<span id='punct'>punctuated: </span>" + Objective.isPunct + "<br/>"
+        
+        // *** //
+        
+        newCell.innerHTML = Objective.LOStmnt;
+        
+        newCell = newRow.insertCell();
+        newCell.innerHTML = "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt;
+        
+        newCell = newRow.insertCell();
+        newCell.innerHTML = "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt;
+        
+        newCell = newRow.insertCell();
+        newCell.innerHTML = "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt;
+        
+        //fileDisplay.innerHTML += "<td>" + Objective.LOStmnt + "</td>"; //"<br/>";
+        //+ tab(8) + "|" + spaces(2) + "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt + spaces(2) + "|" + spaces(2) + "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt + spaces(2) + "|" + spaces(2) + "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct + "<br/>"; // Display results
+        
+        //feedbackDisplay.innerHTML += "<td>" + "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt + "</td>" +
+            //"<td>" + spaces(2) + "|" + spaces(2) + "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt + "</td>" +
+            //"<td>" + spaces(2) + "|" + spaces(2) + "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct + "</td>"; //"<br/>"; // Display results
+
         
         objArr[i] = Objective; // store Objective object in array
         //alert("The Learning objective is: \n" + objArr[i].LOStmnt +
