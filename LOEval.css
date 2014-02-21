@@ -141,6 +141,19 @@ textarea {
     border: 1px solid #999999;   
 }
 
+#table1{
+ padding: 0px;
+    margin: 0px;
+    text-align: left;
+
+}
+
+.LOInfo{
+    font-family: monospace; 
+    font-size: 1em;
+    color: green;
+}
+
 #fileDisplay{
     font-family: monospace; 
     font-size: 1em;

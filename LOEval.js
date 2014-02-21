@@ -114,17 +114,6 @@ if (window.File && window.FileReader){
 // parsing functions //
 /*
 
-
-
-
-
-
-function isCapitalized(){
-    
-}
-
-
-
 function numActionVerbs(){
     
 }
@@ -157,12 +146,10 @@ function parse(result) {
 
     var objArr = []; // array of Objective objects
     var now = result;
-    //var newRow = document.getElementById("table1").insertRow();
-    //var newCell = newRow.insertCell();
+    var newRow;
+    var newCell;
     
     for(var i =0; i < now.length; i++){
-        var newRow = document.getElementById("table1").insertRow();
-        var newCell = newRow.insertCell();
         
         //alert(now[i].capitalize() + " // -> ");
         var Objective = Object.create(LO); // Create Objective object
@@ -172,17 +159,21 @@ function parse(result) {
         isCaptalized(Objective.LOStmnt, Objective);
         
         // *** //
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = i + 1 + spaces(2);
         
-        newCell.innerHTML = Objective.LOStmnt;
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = Objective.LOStmnt + tab(1);
         
-        newCell = newRow.insertCell();
+        newCell = newRow.insertCell(-1);
         newCell.innerHTML = "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt;
         
-        newCell = newRow.insertCell();
+        newCell = newRow.insertCell(-1);
         newCell.innerHTML = "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt;
         
-        newCell = newRow.insertCell();
-        newCell.innerHTML = "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt;
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct;
         
         //fileDisplay.innerHTML += "<td>" + Objective.LOStmnt + "</td>"; //"<br/>";
         //+ tab(8) + "|" + spaces(2) + "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt + spaces(2) + "|" + spaces(2) + "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt + spaces(2) + "|" + spaces(2) + "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct + "<br/>"; // Display results
@@ -198,6 +189,11 @@ function parse(result) {
  
         
     }
+        newRow = document.getElementById("table1").insertRow(0);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Number of learning objectives: </span>" + objArr.length;
+    
 
 }
 
