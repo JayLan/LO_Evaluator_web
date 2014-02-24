@@ -5,8 +5,126 @@ v 1.0
 
 
 */
+
+
+var BloomsTax = {
+    getLevel: function(m){
+        return this[m];
+    },
+    getVersion: function(m){
+        return this["version"];
+    },
+    
+};
+
+    BloomsTax["version"]        = "Bloom's Taxonomy - Revised";
+    BloomsTax["Create"]         = "6";
+    BloomsTax["Evaluate"]       = "5";
+    BloomsTax["Analyze"]        = "4";
+    BloomsTax["Apply"]          = "3";
+    BloomsTax["Understand"]     = "2";
+    BloomsTax["Remember"]       = "1";
+    BloomsTax[6]                = "Create";
+    BloomsTax[5]                = "Evaluate";
+    BloomsTax[4]                = "Analyze";
+    BloomsTax[3]                = "Apply";
+    BloomsTax[2]                = "Understand";
+    BloomsTax[1]                = "Remember";
+
+
+ // action verb dictionary
+var aVerbDict = {};
+        
+    // CREATE : Bloom's Taxonomy level 6
+    aVerbDict["Assemble"]       = "Create";
+    aVerbDict["Combine"]        = "Create";
+    aVerbDict["Compose"]        = "Create";
+    aVerbDict["Construct"]      = "Create";
+    aVerbDict["Design"]         = "Create";
+    aVerbDict["Develop"]        = "Create";
+    aVerbDict["Formulate"]      = "Create";
+    aVerbDict["Generate"]       = "Create";
+    aVerbDict["Hypothesize"]    = "Create";
+    aVerbDict["Modify"]         = "Create";
+    aVerbDict["Plan"]           = "Create";
+    aVerbDict["Program"]        = "Create";
+
+    // EVALUATE : Bloom's Taxonomy level 5
+    aVerbDict["Check"]          = "Evaluate";
+    aVerbDict["Conclude"]       = "Evaluate";
+    aVerbDict["Critique"]       = "Evaluate";
+    aVerbDict["Detect"]         = "Evaluate";
+    aVerbDict["Estimate"]       = "Evaluate";
+    aVerbDict["Judge"]          = "Evaluate";
+    aVerbDict["Justify"]        = "Evaluate";
+    aVerbDict["Rank"]           = "Evaluate";
+    aVerbDict["Reflect"]        = "Evaluate";
+    aVerbDict["Test"]           = "Evaluate";
+    aVerbDict["Verify"]         = "Evaluate";
+    aVerbDict["Weigh"]          = "Evaluate";
+
+    // ANALYZE : Bloom's Taxonomy level 4
+    aVerbDict["Choose"]         = "Analyze";
+    aVerbDict["Compare"]        = "Analyze";
+    aVerbDict["Contrast"]       = "Analyze";
+    aVerbDict["Correlate"]      = "Analyze";
+    aVerbDict["Deconstruct"]    = "Analyze";
+    aVerbDict["Determine"]      = "Analyze";
+    aVerbDict["Differentiate"]  = "Analyze";
+    aVerbDict["Distinguish"]    = "Analyze";
+    aVerbDict["Integrate"]      = "Analyze";
+    aVerbDict["Organize"]       = "Analyze";
+    aVerbDict["Outline"]        = "Analyze";
+    aVerbDict["Parse"]          = "Analyze";
+    aVerbDict["Trace"]          = "Analyze";
+
+    // APPLY : Bloom's Taxonomy level 3
+    aVerbDict["Calculate"]      = "Apply";
+    aVerbDict["Carry Out"]      = "Apply";
+    aVerbDict["Derive"]         = "Apply";
+    aVerbDict["Employ"]         = "Apply";
+    aVerbDict["Execute"]        = "Apply";
+    aVerbDict["Graph"]          = "Apply";
+    aVerbDict["Implement"]      = "Apply";
+    aVerbDict["Report"]         = "Apply";
+    aVerbDict["Simulate"]       = "Apply";
+    aVerbDict["Solve"]          = "Apply";
+    aVerbDict["Tabulate"]       = "Apply";
+    aVerbDict["Write"]          = "Apply";
+
+    // UNDERSTAND : Bloom's Taxonomy level 2
+    aVerbDict["Characterize"]   = "Understand";
+    aVerbDict["Clarify"]        = "Understand";
+    aVerbDict["Classify"]       = "Understand";
+    aVerbDict["Discuss"]        = "Understand";
+    aVerbDict["Explain"]        = "Understand";
+    aVerbDict["Extrapolate"]    = "Understand";
+    aVerbDict["Illustrate"]     = "Understand";
+    aVerbDict["Interpret"]      = "Understand";
+    aVerbDict["Map"]            = "Understand";
+    aVerbDict["Paraphrase"]     = "Understand";
+    aVerbDict["Summarize"]      = "Understand";
+    aVerbDict["Translate"]      = "Understand";
+
+    // REMEMBER : Bloom's Taxonomy level 1
+    aVerbDict["Cite"]           = "Remember";
+    aVerbDict["Define"]         = "Remember";
+    aVerbDict["Describe"]       = "Remember";
+    aVerbDict["Identify"]       = "Remember";
+    aVerbDict["Label"]          = "Remember";
+    aVerbDict["List"]           = "Remember";
+    aVerbDict["Locate"]         = "Remember";
+    aVerbDict["Match"]          = "Remember";
+    aVerbDict["Order"]          = "Remember";
+    aVerbDict["Recite"]         = "Remember";
+    aVerbDict["Recognize"]      = "Remember";
+    aVerbDict["State"]          = "Remember";
+
+        
+    
 var fileMessage = document.getElementById('results');
 var fileDisplay = document.getElementById('fileDisplay');
+var noAVerb = []; // array to hold action verbs not currently in the dictionary
 
 // outputs HTML "tabs" (grouping of non-breaking spaces) given argument input
 function tab(n){
@@ -26,10 +144,12 @@ function spaces(n){
     return "<span id='spacedOut'>" + space + "</span>";
 }
 
-//notes: 
-// AVerb = Action Verb (i.e. Explain, Distinguish, Identify etc.)
-// Punct = Punctuation
-// Capt = Capitalized
+/* 
+Learning Objective Object:
+    AVerb = Action Verb (i.e. Explain, Distinguish, Identify etc.)
+    Punct = Punctuation
+    Capt = Capitalized
+*/
 
 var LO = {
     LOStmnt     :   "",
@@ -40,21 +160,8 @@ var LO = {
     isPunct     :   false, // Bool
     isStmnt     :   false, // Bool
     isCapt      :   false, // Bool
-    getReport   :   function() {
-        document.write(
-            "<br>Num of Action Verbs: " + this.AVerbCount + 
-            "<br>Main Action Verb: " + this.mainAVerb + 
-            "<br>Supplemental Action Verb: " + this.suppAVerb + 
-            "<br>capitilized: " + this.isCapt);
-    }// END getReport
+
 };
-
-//var Objective = Object.create(LO);
-
-//Objective.getReport();
-
-//alert("Test-2: "+ Objective.name);
-
 
 
 //////////////////////////////////
@@ -100,7 +207,6 @@ function isCaptalized(x, y){
     }else{
         y.isCapt = true;   
     }
-    //alert(y.isCapt);
 }
 
 if (window.File && window.FileReader){
@@ -149,10 +255,17 @@ function parse(result) {
     var newRow;
     var newCell;
     
+    console.log(BloomsTax.version);
+    console.log(BloomsTax.getLevel(3));
+    
+    if("Describe" in aVerbDict){
+     console.log(aVerbDict.Describe);   
+    }
+    
     for(var i =0; i < now.length; i++){
         
         //alert(now[i].capitalize() + " // -> ");
-        var Objective = Object.create(LO); // Create Objective object
+        var Objective = Object.create(LO); // Create Learning Objective object
         Objective.LOStmnt = now[i]; // set objective statement (the "learning objective")
          //alert(Objective.LOStmnt);
         hasPunctuation(Objective.LOStmnt, Objective);
@@ -207,9 +320,7 @@ function tokens(lineArr){
 function uploadFile() {
 
     var fileInput = document.getElementById('fileInput');
-    
-    
-
+ 
     fileInput.addEventListener('change', function(e) {
         var file = fileInput.files[0];
         var textType = /text.*/;
@@ -246,14 +357,7 @@ window.onload = function(){
 
 
 /*
-/// /// /// /// ///
-Input file format
 
-Line #  |   Learning Objective
-------------------------------
-1.      |   LO1
-2.      |   LO2
-3.      |   LO3
 
 ** give input option to add Bloom's Taxonomy levels to final output
 
