@@ -142,9 +142,10 @@ textarea {
 }
 
 #table1{
- padding: 0px;
-    margin: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
     text-align: left;
+    border-top: 1px gray solid;
 
 }
 
@@ -153,6 +154,13 @@ textarea {
     font-size: 1em;
     color: green;
 }
+
+.notLO{
+    font-family: monospace; 
+    font-size: 1em;
+    color: red;
+}
+
 
 #fileDisplay{
     font-family: monospace; 

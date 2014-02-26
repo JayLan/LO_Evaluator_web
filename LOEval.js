@@ -302,11 +302,117 @@ function parse(result) {
  
         
     }
-        newRow = document.getElementById("table1").insertRow(0);
+
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class=''>Action Verb Statistics </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
         newCell = newRow.insertCell(0);
         newCell.colSpan = 2;
         newCell.innerHTML = "<span class='LOInfo'>Number of learning objectives: </span>" + objArr.length;
     
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>VERB </span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>% FREQ </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Define:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>11.76% </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Describe:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>23.53% </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Discuss:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>17.65% </span>";
+    ///
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Explain:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>29.41% </span>";
+
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Outline:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>&nbsp5.88% </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>State:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>&nbsp5.88% </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Trace:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>&nbsp5.88% </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Most frequent action verb(s):</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>@ 29.41%  Explain </span>";
+    
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Least frequent action verb(s):</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='LOInfo'>@  &nbsp5.88%  Outline, State, Trace </span>";
+
+        newRow = document.getElementById("table2").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = "<span class='LOInfo'>Action verbs not found in dictionary:</span>";
+    
+            newCell = newRow.insertCell(-1);
+            //newCell.colSpan = 2;
+            newCell.innerHTML = "<span class='notLO'>Briefly, How, What </span>";
+
 
 }
 
