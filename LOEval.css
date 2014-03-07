@@ -109,6 +109,73 @@ textarea {
    
 }
 
+#newly{
+    height: 550px;
+    width:  650px;
+    margin-top: 15px;
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-bottom: 50px;
+    padding-right: 25px;
+    border: 2px solid black;
+    background: -webkit-linear-gradient(top, #FFE895, #ffffff);
+    background: -moz-linear-gradient(top, #FFE895, #ffffff); 
+    background: -o-linear-gradient(top, #FFE895, #ffffff); 
+    background: linear-gradient(to top, #FFE895, #ffffff);
+   
+}
+
+.note{
+    color: red;
+    font-size: 0.8em;
+    text-emphasis: italic;
+}
+
+.noteLabel{
+    font-family: monospace;
+    font-size: 0.8em;
+    color: red;
+    background-color: #FFFCB2;
+    border: 1px solid #FFDB14;
+}
+
+.altLabel{
+    font-family: monospace;
+    font-size: 0.8em;
+    background-color: #C0ECFF;
+    border: 1px solid #499AFF;
+    
+}
+
+.ambTerms{
+    border-bottom: 1px solid #FFBDBD;
+    border-left: 1px solid #FFBDBD;
+    border-right: 1px solid #FFBDBD;
+}
+
+.aVerbNF{
+    background-color: #FFBDBD;
+    border: 1px solid #E83B0A;
+}
+
+.aVerb1{
+    background-color: #D4BCE8;
+}
+
+.aVerb2{
+    background-color: #FFD9B2;
+}
+
+.aVerb3{
+    background-color: #D4FFBF;
+}
+
+#whiteBox{
+    height: 550px;
+    width:  650px;
+}
+
 #appTitle{
     margin: 0px;
     margin-bottom: 0.5em;

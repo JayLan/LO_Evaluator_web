@@ -293,8 +293,9 @@ function parse(result) {
         
         //feedbackDisplay.innerHTML += "<td>" + "<span id='stmnt'>STATEMENT: </span>" + Objective.isStmnt + "</td>" +
             //"<td>" + spaces(2) + "|" + spaces(2) + "<span id='caps'>CAPITALIZED: </span>" + Objective.isCapt + "</td>" +
-            //"<td>" + spaces(2) + "|" + spaces(2) + "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct + "</td>"; //"<br/>"; // Display results
-
+            //"<td>" + spaces(2) + "|" + spaces(2) + "<span id='punct'>PUNCTUATED: </span>" + Objective.isPunct + "</td>"; //"<br/>"; // Display result
+        
+        
         
         objArr[i] = Objective; // store Objective object in array
         //alert("The Learning objective is: \n" + objArr[i].LOStmnt +
@@ -303,6 +304,120 @@ function parse(result) {
         
     }
 
+        /////////
+        // *** hard coded data for mockup/sim screenshot - to be deleted ***
+    
+        // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "54" + spaces(2);
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span class='aVerb1'>Identify</span> and <span class='aVerb2'>describe</span> <span class='ambTerms'>some</span> key elements used in business-to-business marketing." + tab(1);
+        
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>A-VERBS: </span>" + "2";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>AMB TERMS: </span>" + "true";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'></span>";
+    
+        // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'></span>";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.colSpan = 5;
+        newCell.innerHTML ="<span class='noteLabel'>NOTE:</span> <span class='note'>This LO has multiple action verbs! Re-write the LO as separate statements of performance, or use one action verb to support the main action verb - as indicated below.</span>";    
+        
+        // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'></span>";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.colSpan = 5;
+        newCell.innerHTML ="<span class='noteLabel'>NOTE:</span> <span class='note'>This LO has ambiguous term(s) as indicated with partial borders. Replace the term(s) with the expected quantity, or remove the term(s).</span>";    
+    
+    
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = tab(0.5) + "<span class='altLabel'>ALT STATEMENT:</span> \"<span class='aVerb1'>Identify</span> <span class='ambTerms'>some</span> key elements used in business-to-business marketing.\"";
+    
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = tab(0.5) + "<span class='altLabel'>ALT STATEMENT:</span> \"<span class='aVerb2'>Describe</span> <span class='ambTerms'>some</span> key elements used in business-to-business marketing.\"";
+    
+        // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "55" + spaces(2);
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "Given data on the nominal interest rate and inflation, <span class='ambTerms'>be able to</span> calculate the real interest rate.";
+        
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>GIVENS: </span>" + "true";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>AMB Terms: </span>true";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'></span>";
+    
+            // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'></span>";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.colSpan = 5;
+        newCell.innerHTML ="<span class='noteLabel'>NOTE:</span> <span class='note'>This LO has ambiguous terms as indicated with partial borders.</span>";   
+    
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(0);
+        newCell.colSpan = 2;
+        newCell.innerHTML = tab(0.5) + "<span class='altLabel'>ALT STATEMENT:</span> \"Given data on the nominal interest rate and inflation, Calculate the real interest.\"";
+    
+            // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "56" + spaces(2);
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span class='aVerbNF'>Trace</span> westard expansion during the gold rush of 1849.";
+        
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>STATEMENT: </span>" + "true";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>A-VERBS: </span>" + "1";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'>AMB TERMS: </span>" + "false";
+
+    
+        // *** ROW
+        newRow = document.getElementById("table1").insertRow(-1);
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = "<span id='stmnt'></span>";
+    
+        newCell = newRow.insertCell(-1);
+        newCell.colSpan = 5;
+        newCell.innerHTML ="<span class='noteLabel'>NOTE:</span> <span class='note'>This LO has an action verb not found in the current dictionary!</span>";    
+
+    
+        //END *** hard coded data ***
+        /////////
+    
+    
+    
+    
     
         newRow = document.getElementById("table2").insertRow(-1);
         newCell = newRow.insertCell(0);
@@ -456,6 +571,18 @@ function uploadFile() {
     
    
 }
+    
+    var CP_upload = document.getElementById("CPInput");
+    CP_upload.onclick = function(){
+    var newWin = window.open(
+    "",
+    "_blank",
+    "toolbar=0,menubar=0,title=1,location=1,resizable=1,scrollbars=1,status=1, width=725px, height=650px, left=250px, top=100px"
+    );
+
+    newWin.document.write('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">'+ 
+'<html><head><link rel="stylesheet" href="LOEval.css"><title>LO Upload</title></head><body><div id="newly"><textarea id="whiteBox"></textarea><input type="submit" value="Upload"/></div></body></html>');
+    }//end CP_upload
 
 window.onload = function(){
  uploadFile();   
