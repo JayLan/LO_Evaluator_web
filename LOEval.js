@@ -1,4 +1,3 @@
-// *** //
 /*
 Learning Objective Evaluator
 v 1.0
