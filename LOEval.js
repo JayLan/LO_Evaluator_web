@@ -2,10 +2,8 @@
 /*
 Learning Objective Evaluator
 v 1.0
-
-
+© Jason Lancaster, ALL RIGHTS RESERVED
 */
-
 
 var BloomsTax = {
     getLevel: function(m){
@@ -32,7 +30,7 @@ var BloomsTax = {
     BloomsTax[1]                = "Remember";
 
 
- // action verb dictionary
+// action verb dictionary
 var aVerbDict = {};
         
     // CREATE : Bloom's Taxonomy level 6
@@ -120,8 +118,7 @@ var aVerbDict = {};
     aVerbDict["Recognize"]      = "Remember";
     aVerbDict["State"]          = "Remember";
 
-        
-    
+
 var fileMessage = document.getElementById('results');
 var fileDisplay = document.getElementById('fileDisplay');
 var noAVerb = []; // array to hold action verbs not currently in the dictionary
@@ -163,7 +160,6 @@ var LO = {
 
 };
 
-
 //////////////////////////////////
 var LOCount = 0;
 var spacingCount = 0;
@@ -174,10 +170,9 @@ String.prototype.capitalize = function(){
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-
 // check if learning objective statement has end punctuation. Period is the only acceptable punctuation for the statement.
 function hasPunctuation(x, y){
-    var lastChar = x.charAt(x.length-1); // get last character of string
+    var lastChar = x.charAt(x.length-1);
     if(lastChar != '.'){
                    
         if(lastChar == '?'){
@@ -210,40 +205,10 @@ function isCaptalized(x, y){
 }
 
 if (window.File && window.FileReader){
- // success with File API  
     
 }else{
     alert("This browser does not support uploading of files. Choose a different browser!");
 }
-
-// // // // //
-// parsing functions //
-/*
-
-function numActionVerbs(){
-    
-}
-
-function hasAmbiguousTerms()
-// "some", etc.
-
-}
-
-function unkChars(){
-
-}
-
-// // // // //
-*/
-
-/*
-function printObjectives(objArr){
-    arr = objArr;
-    for(var t = 0; t < arr.length; t++){
-        fileDisplay.innerText = "The learning objective is: " + objArr[i].LOStmnt +"\n";   
-    }
-}
-*/
 
 // * find action verbs recursively? Allows to find multiple action verbs <= 2n.
 // Check first word against action verb dictionary => no match = 
@@ -299,9 +264,7 @@ function parse(result) {
         
         objArr[i] = Objective; // store Objective object in array
         //alert("The Learning objective is: \n" + objArr[i].LOStmnt +
-        //      "\nLO: " + (i+1) + " " + objArr[i].isPunct + " " + objArr[i].isStmnt);
- 
-        
+        //      "\nLO: " + (i+1) + " " + objArr[i].isPunct + " " + objArr[i].isStmnt); 
     }
 
         /////////
@@ -342,7 +305,6 @@ function parse(result) {
         newCell.colSpan = 5;
         newCell.innerHTML ="<span class='noteLabel'>NOTE:</span> <span class='note'>This LO has ambiguous term(s) as indicated with partial borders. Replace the term(s) with the expected quantity, or remove the term(s).</span>";    
     
-    
         newRow = document.getElementById("table1").insertRow(-1);
         newCell = newRow.insertCell(0);
         newCell.colSpan = 2;
@@ -370,7 +332,7 @@ function parse(result) {
         newCell = newRow.insertCell(-1);
         newCell.innerHTML = "<span id='stmnt'></span>";
     
-            // *** ROW
+        // *** ROW
         newRow = document.getElementById("table1").insertRow(-1);
         newCell = newRow.insertCell(-1);
         newCell.innerHTML = "<span id='stmnt'></span>";
@@ -384,7 +346,7 @@ function parse(result) {
         newCell.colSpan = 2;
         newCell.innerHTML = tab(0.5) + "<span class='altLabel'>ALT STATEMENT:</span> \"Given data on the nominal interest rate and inflation, Calculate the real interest.\"";
     
-            // *** ROW
+        // *** ROW
         newRow = document.getElementById("table1").insertRow(-1);
         newCell = newRow.insertCell(-1);
         newCell.innerHTML = "56" + spaces(2);
@@ -414,10 +376,6 @@ function parse(result) {
     
         //END *** hard coded data ***
         /////////
-    
-    
-    
-    
     
         newRow = document.getElementById("table2").insertRow(-1);
         newCell = newRow.insertCell(0);
@@ -531,8 +489,6 @@ function parse(result) {
 
 }
 
-
-
 function tokens(lineArr){
     var lines = lineArr;
     
@@ -568,10 +524,9 @@ function uploadFile() {
         }
 
     });
-    
    
 }
-    
+
     var CP_upload = document.getElementById("CPInput");
     CP_upload.onclick = function(){
     var newWin = window.open(
@@ -589,18 +544,48 @@ window.onload = function(){
 };
 
 
-/*
 
 
-** give input option to add Bloom's Taxonomy levels to final output
+
+
+
+
+
+
+
+
+
+
+
+
 
 /// /// /// /// ///
+// DEPRECATED CHECK BEFORE DELETION //
+// parsing functions //
+/*
+
+function numActionVerbs(){
+    
+}
+
+function hasAmbiguousTerms()
+// "some", etc.
+
+}
+
+function unkChars(){
+
+}
+
+// // // // //
 */
 
-
-/// /// /// /// ///
 /*
-
-
+function printObjectives(objArr){
+    arr = objArr;
+    for(var t = 0; t < arr.length; t++){
+        fileDisplay.innerText = "The learning objective is: " + objArr[i].LOStmnt +"\n";   
+    }
+}
 */
 
