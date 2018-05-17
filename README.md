@@ -7,5 +7,4 @@ learning objectives. Additionally, the goal is to do very light "shallow" parsin
 
 Key Notes:
 * Uses HTML 5 File API
-* 
 
